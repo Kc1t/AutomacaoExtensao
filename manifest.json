@@ -1,13 +1,20 @@
 {
-    "manifest_version": 3,
-    "name": "MLEXT",
+    "manifest_version": 4,
+    "name": "MlAutomação",
     "description": "",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "content_scripts":[
         {
            "matches": ["https://*.mercadolivre.com.br/*"],
            "css": ["style.css"],
            "js": ["index.js"]
         }
-    ]
+    ],
+    "icons": {
+        "16": "icons/ml1.png",
+        "32": "icons/ml1.png",
+        "48": "icons/ml1.png",
+        "128": "icons/ml1.png"
+    }
+    
 }
