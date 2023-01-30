@@ -1,4 +1,4 @@
-"use strict"
+'use strict';
 
 function init(){
 
@@ -9,19 +9,32 @@ function init(){
 
     const cents = document.querySelector('div.ui-pdp-price__second-line > span > span.andes-money-amount__fraction > andes-money-amount__cents')?.innerText || '0'
 
-    const sold = Number (document.querySelector('.ui-pdp-header__subtitle').innerText.split(' ')[4])
+    const sold = Number (document.querySelector('.ui-pdp-header__subtitle')?.innerText.split(' ')[4])
 
     const container = document.querySelector(".ui-pdp-header__title-container");
-    
-    container.insertAdjacentElement(
-    "beforebegin",
-    `
-        <ul class="mltext-container">
-            <li> Receita Bruta: <span>R$ 500</span></li>
-        </ul>
-    `
-    )
+
+    const total = Number(price + '.' + cents) * sold
+
+    setTimeout(() => { // no ml a pg tem um refresh no primeiro segundo, ent apos 1,5 s isso vai funcionar
+        container.insertAdjacentHTML(
+            "beforebegin",
+            `
+            <ul class="mltext-container">
+            <li> Receita Bruta: <span>${formatMoney(total)}</span></li>
+            </ul>
+            `
+            )
+        }, 1500)
+
+    }
+
+function formatMoney(value){
+    return value.toLocaleString('pt-BR',{ //converte o numero do total para string
+        style: 'currency',
+        currency: 'BRL'
+    })
 }
+
 
 init()
 

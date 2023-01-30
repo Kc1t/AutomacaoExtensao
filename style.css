@@ -1,0 +1,33 @@
+.mltext-container{
+    margin-bottom: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-top: 2px solid #3483fa;
+    border-radius: 8px;
+}
+
+.mltext-container li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 2px 0px;
+}
+
+.mltext-container li > span{
+    padding: 2px 4px;
+    background-color: #fff;
+    color: #3483fa;
+    font-weight: bold;
+    font-size: 12px;
+    border: solid 1px #3483fa;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.mltext-container li > span:hover{
+    background-color: #3483fa;
+    color: #fff;
+}
